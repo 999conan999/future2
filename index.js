@@ -266,7 +266,8 @@ async function on_tooll(){
 //
 async function back_usdt(is_bot){
   let usdt= await get_usdt_account(); 
-  bot.sendMessage(chatId,`usdt ${is_bot?'(check)':'(Bot)'} : ${usdt.toFixed(3)}$`);
+  let usdt_fix=Number(usdt).toFixed(3);
+  bot.sendMessage(chatId,`usdt ${is_bot?'(check)':'(Bot)'} : ${usdt_fix}$`);
 }
 
 // tesst
