@@ -1,7 +1,8 @@
 const Binance = require('node-binance-api');
 const binance = new Binance().options({
   reconnect:true,
-
+  APIKEY: 'NAVL20l5jIfKyBjWcKl3Ck9DljMolRjqKHsTx3QJuZoMb7dG1Mm1e6AygxmHJBWd',
+  APISECRET: 'V1rIo4zmsAJp3d73UqD5bXgwEuYExDD6dxjoLy7ItbLcxhBcJToqAtZy0YpfO0J8'
 });
 var RSI = require('technicalindicators').RSI;
 const TelegramBot = require('node-telegram-bot-api');
@@ -266,7 +267,7 @@ async function on_tooll(){
 //
 async function back_usdt(is_bot){
   let usdt= await get_usdt_account(); 
-  bot.sendMessage(chatId,`usdt ${is_bot?'(check)':'(Bot)'} : ${usdt}`);
+  bot.sendMessage(chatId,`usdt ${is_bot?'(check)':'(Bot)'} : ${usdt.toFixed(3)}$`);
 }
 
 // tesst
